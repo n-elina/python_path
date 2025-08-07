@@ -1,6 +1,5 @@
 import pytest
 from selene import browser, be, have
-from selene.support.conditions.have import exact_text
 
 
 @pytest.fixture(scope="function")
