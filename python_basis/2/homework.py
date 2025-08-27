@@ -113,7 +113,7 @@ def find_registration_button_on_login_page(page_url, button_text):
 
 
 def print_function_name_and_args(func, *args):
-    function_name = func.__name__.replace('_', ' ').title()
+    function_name = func.__name__.title().replace('_', ' ')
     argument_name = ", ".join([*args])
     print(f'{function_name} [{argument_name}]')
     return f'{function_name} [{argument_name}]'
