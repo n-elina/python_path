@@ -32,9 +32,9 @@ class TestProducts:
 
     def test_product_check_quantity(self, product):
         # TODO напишите проверки на метод check_quantity
-        assert product.check_quantity(999) is True
-        assert product.check_quantity(1000) is True
-        assert product.check_quantity(1001) is False
+        assert product.check_quantity(999)
+        assert product.check_quantity(1000)
+        assert not product.check_quantity(1001)
 
     def test_product_buy(self, product):
         # TODO напишите проверки на метод buy

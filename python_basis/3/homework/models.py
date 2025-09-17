@@ -86,7 +86,8 @@ class Cart:
         """
         if product in self.products:
             if remove_count is None or remove_count >= self.products[product]:
-                del self.products[product]
+                # del self.products[product] # так можно, но встречается крайне редко
+                self.products.pop(product)
             elif remove_count < self.products[product]:
                 self.products[product] = self.products[product] - remove_count
 
@@ -99,6 +100,8 @@ class Cart:
             total_price = product.price * count
         return total_price
 
+        # return sum(self.products[product] * product.price for product in self.products) # можно так реализовать
+
     def buy(self):
         """
         Метод покупки.
@@ -106,8 +109,5 @@ class Cart:
         В этом случае нужно выбросить исключение ValueError
         """
         for product, count in self.products.items():
-            if product.check_quantity(count):
-                product.buy(count)
-            else:
-                raise ValueError
+            product.buy(count)
         self.clear()

@@ -12,9 +12,7 @@ def test_student_registration_form():
 
     # WHEN
     browser.element('#firstName').type('Olga')
-
     browser.element('#lastName').type('YA')
-
     browser.element('#userEmail').type('name@example.com')
 
     browser.all('[name=gender]').element_by(have.value('Female')).element('..').click()
